@@ -12,8 +12,8 @@ This project is a Spring Boot application that crawls e-commerce websites to dis
 1. **Clone the repository:**
 
     ```sh
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone 'https://github.com/vedansh-girdharwal/web-crawler.git'
+    cd web-crawler
     ```
 
 2. **Build the project:**
