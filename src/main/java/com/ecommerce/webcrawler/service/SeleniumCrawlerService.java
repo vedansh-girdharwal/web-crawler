@@ -129,16 +129,16 @@ public class SeleniumCrawlerService {
         Set<String> uniqueUrls = new HashSet<>();
 
         // Configure ChromeDriver with headless options
-        WebDriverManager.chromedriver().setup();
+//        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new");
         options.addArguments("--disable-gpu");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
-        if(environment.equalsIgnoreCase("production")){
-            options.setBinary("/usr/bin/google-chrome");
-        }
+        options.addArguments("--remote-allow-origins=*");
+        options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
+        options.setExperimentalOption("useAutomationExtension", false);
+        options.setBinary("/usr/bin/google-chrome");
 
         WebDriver driver = new ChromeDriver(options);
 
